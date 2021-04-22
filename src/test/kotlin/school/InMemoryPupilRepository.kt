@@ -7,4 +7,8 @@ class InMemoryPupilRepository : PupilRepository {
         return pupils[id]
             ?: throw Exception()
     }
+
+    override fun persist(pupil: Pupil) {
+        pupils[pupil.id] = pupil
+    }
 }
